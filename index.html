@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>成都中国青年旅行社有限公司 - 2027年度奖补项目申报清单</title>
+    <style>
+        :root {
+            --primary: #1a3a5c;
+            --primary-light: #2d5f8a;
+            --accent: #e8943a;
+            --accent-light: #f5b971;
+            --bg: #f4f6f9;
+            --card-bg: #ffffff;
+            --text: #2c3e50;
+            --text-light: #6c7a89;
+            --border: #dce3ec;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #3498db;
+            --danger: #e74c3c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* ===== Header (Sticky) ===== */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .header h1 span {
+            color: var(--accent-light);
+            font-weight: 400;
+            font-size: 16px;
+            margin-left: 12px;
+        }
+        .header-meta {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        /* ===== Navigation ===== */
+        .nav {
+            background: var(--primary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .nav-inner::-webkit-scrollbar { display: none; }
+        .nav a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            padding: 14px 22px;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+            flex-shrink: 0;
+        }
+        .nav a:hover, .nav a.active {
+            color: white;
+            background: rgba(255,255,255,0.05);
+            border-bottom-color: var(--accent);
+        }
+
+        /* ===== Container ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 40px 60px;
+        }
+
+        /* ===== Section ===== */
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 120px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        /* ===== Card ===== */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 28px 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            font-size: 17px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .card p {
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        /* ===== Info Grid ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .info-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 22px 26px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+        }
+        .info-item .label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .info-item .value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* ===== Badge ===== */
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .badge-national { background: linear-gradient(135deg, #e74c3c22, #e74c3c11); color: #c0392b; border: 1px solid #e74c3c44; }
+        .badge-province { background: linear-gradient(135deg, #3498db22, #3498db11); color: #2471a3; border: 1px solid #3498db44; }
+        .badge-city { background: linear-gradient(135deg, #27ae6022, #27ae6011); color: #1e8449; border: 1px solid #27ae6044; }
+        .badge-other { background: linear-gradient(135deg, #8e44ad22, #8e44ad11); color: #6c3483; border: 1px solid #8e44ad44; }
+
+        /* ===== Business Cards Grid ===== */
+        .biz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .biz-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .biz-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+        .biz-card .biz-icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; margin-bottom: 14px;
+        }
+        .biz-card h4 { font-size: 16px; color: var(--primary); margin-bottom: 8px; }
+        .biz-card p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+
+        /* ===== Desktop Table ===== */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 1600px;
+        }
+        thead th {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        tbody tr:hover { background: #f0f5ff; }
+        tbody tr:last-child td { border-bottom: none; }
+        .level-tag {
+            display: inline-block; padding: 3px 10px; border-radius: 12px;
+            font-size: 12px; font-weight: 600; white-space: nowrap;
+        }
+        .level-national { background: #fde8e8; color: #c0392b; }
+        .level-province { background: #e8f0fe; color: #2471a3; }
+        .level-city { background: #e8f8e8; color: #1e8449; }
+        .level-district { background: #f3e8fd; color: #6c3483; }
+        .amount { font-weight: 700; color: var(--accent); font-size: 15px; }
+        .category-tag {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 500; background: #f0f0f0; color: #555;
+        }
+
+        /* ===== Tech Tags ===== */
+        .tech-tag {
+            display: inline-block; padding: 2px 7px; border-radius: 4px;
+            font-size: 11px; font-weight: 500; background: #e8f4fd; color: #2471a3;
+            margin: 1px 2px; white-space: nowrap;
+        }
+        .tech-tag.ai { background: #fde8f4; color: #c0392b; }
+        .tech-tag.hw { background: #e8fde8; color: #1e8449; }
+        .tech-tag.sw { background: #f3e8fd; color: #6c3483; }
+
+        /* ===== Mobile Card View (hidden on desktop) ===== */
+        .mobile-cards { display: none; }
+
+        .m-project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 0;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .m-project-card .m-card-header {
+            padding: 16px 18px 12px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .m-project-card .m-card-header .m-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+            flex: 1;
+        }
+        .m-project-card .m-card-header .m-seq {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: var(--accent);
+            color: white; font-size: 13px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .m-project-card .m-card-body { padding: 4px 18px 16px; }
+        .m-field {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .m-field:last-child { border-bottom: none; }
+        .m-field .m-label {
+            min-width: 80px;
+            max-width: 80px;
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 600;
+            padding-top: 2px;
+            flex-shrink: 0;
+        }
+        .m-field .m-value {
+            flex: 1;
+            color: var(--text);
+            word-break: break-word;
+        }
+        .m-field .m-value.amount {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        /* ===== Stats Bar ===== */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .stat-card .stat-num {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-card .stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== Filter Buttons ===== */
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 18px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: white;
+            color: var(--text);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* ===== Timeline ===== */
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before {
+            content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+            width: 3px; background: linear-gradient(to bottom, var(--accent), var(--primary));
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative; margin-bottom: 24px; padding: 18px 24px;
+            background: var(--card-bg); border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid var(--border);
+        }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -26px; top: 24px;
+            width: 14px; height: 14px; background: var(--accent);
+            border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px var(--accent);
+        }
+        .timeline-item .year { font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+        .timeline-item h4 { font-size: 15px; color: var(--primary); margin-bottom: 6px; }
+        .timeline-item p { font-size: 13px; color: var(--text-light); }
+        .status-done { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; background: #27ae6022; color: #27ae60; font-weight: 600; }
+        .status-progress { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; background: #f39c1222; color: #f39c12; font-weight: 600; }
+
+        /* ===== Policy Links ===== */
+        .policy-ref a {
+            color: var(--info); text-decoration: none; border-bottom: 1px dashed var(--info);
+            font-size: 13px; transition: all 0.2s; word-break: break-all;
+        }
+        .policy-ref a:hover { color: var(--primary); border-bottom-style: solid; }
+        .policy-card a {
+            color: var(--info); text-decoration: none; border-bottom: 1px dashed var(--info); transition: all 0.2s;
+        }
+        .policy-card a:hover { color: var(--primary); border-bottom-style: solid; }
+        .ext-icon { display: inline-block; font-size: 10px; margin-left: 2px; opacity: 0.6; }
+
+        /* ===== Roadmap ===== */
+        .roadmap { margin-top: 24px; }
+        .roadmap-quarter {
+            display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start;
+        }
+        .roadmap-label {
+            min-width: 72px; font-size: 14px; font-weight: 700; color: var(--primary);
+            padding-top: 6px; text-align: center; background: white; border-radius: 8px;
+            padding: 8px 4px; border: 1px solid var(--border); box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .roadmap-items { flex: 1; display: flex; flex-wrap: wrap; gap: 8px; }
+        .roadmap-item {
+            padding: 8px 14px; border-radius: 8px; font-size: 12px; font-weight: 500;
+            border: 1px solid; line-height: 1.5; max-width: 280px;
+        }
+        .roadmap-item.national { background: #fde8e811; border-color: #e74c3c44; color: #c0392b; }
+        .roadmap-item.province { background: #e8f0fe11; border-color: #3498db44; color: #2471a3; }
+        .roadmap-item.city { background: #e8f8e811; border-color: #27ae6044; color: #1e8449; }
+        .roadmap-item.district { background: #f3e8fd11; border-color: #8e44ad44; color: #6c3483; }
+        /* V15: 前置动作卡（必须早于窗口完成的事项，虚线边框区分于窗口卡） */
+        .roadmap-item.action {
+            background: #fffaf2; border-style: dashed; border-color: #e0b06f; color: #8b5a13;
+        }
+
+        /* ===== V15: 申报窗口三态标签 ===== */
+        .win-tag {
+            display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 700; white-space: nowrap;
+        }
+        .win-now { background: #e74c3c; color: #fff; }
+        .win-next { background: #f39c122a; color: #b9770e; border: 1px solid #f39c1266; }
+        .win-plan { background: #3498db22; color: #2471a3; border: 1px solid #3498db55; }
+
+        /* ===== V15: 规划提示框（量级升级路径 / 多主体拆分 / 部分通道待核实） ===== */
+        .action-box {
+            background: linear-gradient(135deg, #fff7ee, #fdf1e3);
+            border: 1px solid #f0c98b; border-left: 5px solid var(--accent);
+            border-radius: 10px; padding: 20px 24px; margin-top: 26px;
+        }
+        .action-box h4 { font-size: 15px; color: #a5670c; margin-bottom: 10px; }
+        .action-box ol, .action-box ul { margin-left: 20px; font-size: 13.5px; color: #6b4f2a; line-height: 1.95; }
+        .action-box strong { color: #8b5a13; }
+
+        /* ===== Unit Summary ===== */
+        .unit-summary {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px; margin-top: 20px;
+        }
+        .unit-card {
+            background: white; border-radius: 10px; padding: 18px 20px;
+            border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .unit-card .unit-name { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+        .unit-card .unit-count {
+            font-size: 24px; font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .unit-card .unit-desc { font-size: 12px; color: var(--text-light); margin-top: 4px; }
+
+        /* ===== Lifecycle Bar ===== */
+        .lifecycle-bar {
+            margin-top: 20px; padding: 20px 24px; background: #f8f9fc;
+            border-radius: 10px; border: 1px solid var(--border);
+        }
+        .lifecycle-bar h4 { font-size: 14px; color: var(--primary); margin-bottom: 16px; font-weight: 600; }
+        .lifecycle-steps { display: flex; gap: 0; position: relative; }
+        .lifecycle-step { flex: 1; text-align: center; position: relative; padding: 0 4px; }
+        .lifecycle-step .bar { height: 8px; border-radius: 4px; margin-bottom: 10px; }
+        .lifecycle-step:nth-child(1) .bar { background: #3498db; }
+        .lifecycle-step:nth-child(2) .bar { background: #9b59b6; }
+        .lifecycle-step:nth-child(3) .bar { background: #27ae60; }
+        .lifecycle-step:nth-child(4) .bar { background: #e74c3c; }
+        .lifecycle-step .step-label { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+        .lifecycle-step .step-pct {
+            font-size: 18px; font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        /* ===== Contact Bar ===== */
+        .contact-bar {
+            margin-top: 20px; padding: 16px 28px; background: white;
+            border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border); display: flex;
+            align-items: center; gap: 28px; flex-wrap: wrap;
+        }
+        .contact-bar-title {
+            font-size: 14px; font-weight: 700; color: var(--primary);
+            white-space: nowrap; padding-right: 12px; border-right: 2px solid var(--border);
+        }
+        .contact-bar-name { font-size: 18px; font-weight: 800; color: var(--primary); letter-spacing: 1px; }
+        .contact-bar-info { font-size: 13px; color: var(--text); }
+        .contact-bar-info .cb-label { color: var(--text-light); margin-right: 4px; }
+        .contact-bar-info a { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 15px; }
+        .contact-bar-info a:hover { color: var(--accent); }
+        .contact-bar-sep { width: 1px; height: 28px; background: var(--border); }
+
+        /* ===== Collapse Sections ===== */
+        .collapse-group {
+            margin-top: 48px; padding-top: 32px; border-top: 2px dashed var(--border);
+        }
+        .collapse-group-title {
+            font-size: 16px; font-weight: 600; color: var(--text-light);
+            margin-bottom: 16px; text-align: center; letter-spacing: 2px;
+        }
+        .collapse-section {
+            margin-bottom: 12px; border-radius: 12px; overflow: hidden;
+            background: var(--card-bg); box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .collapse-section summary {
+            padding: 18px 28px; cursor: pointer; font-size: 16px; font-weight: 600;
+            color: var(--primary); display: flex; align-items: center; gap: 12px;
+            list-style: none; border-left: 4px solid var(--accent); transition: background 0.2s;
+        }
+        .collapse-section summary::-webkit-details-marker { display: none; }
+        .collapse-section summary:hover { background: #f8f9fc; }
+        .collapse-section summary::before {
+            content: '\25B6'; font-size: 12px; color: var(--accent);
+            transition: transform 0.3s; flex-shrink: 0;
+        }
+        .collapse-section[open] summary::before { transform: rotate(90deg); }
+        .collapse-section[open] summary { border-bottom: 1px solid var(--border); background: #f8f9fc; }
+        .collapse-section .collapse-body { padding: 24px 28px; animation: fadeSlideIn 0.3s ease; }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary); color: rgba(255,255,255,0.7);
+            text-align: center; padding: 24px; font-size: 13px;
+        }
+
+        /* ===== Print ===== */
+        @media print {
+            .header, .nav, .filter-bar { position: static; }
+            .section { page-break-inside: avoid; }
+            .collapse-section { break-inside: avoid; }
+            .mobile-cards { display: none !important; }
+        }
+
+        /* ================================================================
+           RESPONSIVE BREAKPOINTS
+           ================================================================ */
+
+        /* ===== Tablet & Small Desktop (≤1024px) ===== */
+        @media (max-width: 1024px) {
+            .container { padding: 20px 20px 48px; }
+            .header-inner { padding: 16px 20px; flex-direction: column; gap: 6px; align-items: flex-start; }
+            .header h1 { font-size: 20px; }
+            .header h1 span { display: block; margin-left: 0; margin-top: 4px; font-size: 14px; }
+            .header-meta { font-size: 12px; }
+            .nav-inner { padding: 0 12px; }
+            .nav a { padding: 12px 16px; font-size: 13px; }
+
+            /* Hide desktop table, show mobile cards */
+            .table-wrapper { display: none; }
+            .mobile-cards { display: block; }
+
+            .section-title { font-size: 18px; }
+            .section-title .icon { width: 28px; height: 28px; font-size: 14px; }
+
+            .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .stat-card { padding: 18px; }
+            .stat-card .stat-num { font-size: 28px; }
+
+            .roadmap-quarter { flex-direction: column; gap: 8px; }
+            .roadmap-label {
+                min-width: auto; text-align: left; padding: 8px 14px;
+                display: flex; gap: 8px; align-items: center;
+            }
+            .roadmap-item { max-width: 100%; }
+
+            .unit-summary { grid-template-columns: repeat(2, 1fr); }
+
+            .card { padding: 20px 22px; }
+            .collapse-section summary { padding: 16px 20px; font-size: 15px; }
+            .collapse-section .collapse-body { padding: 20px; }
+            .timeline { padding-left: 24px; }
+            .timeline-item { padding: 14px 18px; }
+        }
+
+        /* ===== Mobile (≤768px) ===== */
+        @media (max-width: 768px) {
+            .container { padding: 16px 12px 40px; }
+            .header-inner { padding: 14px 16px; }
+            .header h1 { font-size: 18px; }
+            .header h1 span { font-size: 13px; }
+            .nav-inner { padding: 0 8px; }
+            .nav a { padding: 10px 14px; font-size: 12px; }
+
+            .section { margin-bottom: 28px; }
+            .section-title { font-size: 17px; margin-bottom: 16px; padding-bottom: 10px; }
+
+            .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+            .stat-card { padding: 14px 10px; }
+            .stat-card .stat-num { font-size: 24px; }
+            .stat-card .stat-label { font-size: 11px; }
+
+            .filter-bar { gap: 6px; margin-bottom: 16px; }
+            .filter-btn { padding: 6px 14px; font-size: 12px; min-height: 40px; }
+
+            .m-project-card { margin-bottom: 14px; }
+            .m-project-card .m-card-header { padding: 14px 14px 10px; }
+            .m-project-card .m-card-header .m-title { font-size: 14px; }
+            .m-project-card .m-card-body { padding: 2px 14px 14px; }
+            .m-field { padding: 8px 0; font-size: 13px; }
+            .m-field .m-label { min-width: 70px; max-width: 70px; font-size: 11px; }
+
+            .roadmap-quarter { margin-bottom: 10px; }
+            .roadmap-items { gap: 6px; }
+            .roadmap-item { font-size: 11px; padding: 6px 10px; }
+            .win-tag { font-size: 10px; padding: 2px 6px; }
+            .action-box { padding: 16px; }
+            .action-box ol, .action-box ul { margin-left: 18px; font-size: 13px; }
+
+            .unit-summary { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .unit-card { padding: 14px 16px; }
+            .unit-card .unit-count { font-size: 20px; }
+            .unit-card .unit-name { font-size: 12px; }
+            .unit-card .unit-desc { font-size: 11px; }
+
+            .card { padding: 18px 16px; border-radius: 10px; }
+            .card h3 { font-size: 15px; margin-bottom: 10px; }
+            .card p { font-size: 14px; line-height: 1.75; }
+
+            .contact-bar {
+                flex-direction: column; align-items: flex-start;
+                gap: 10px; padding: 14px 18px;
+            }
+            .contact-bar-sep { display: none; }
+            .contact-bar-name { font-size: 16px; }
+
+            .lifecycle-bar { padding: 16px 14px; }
+            .lifecycle-step .step-label { font-size: 11px; }
+            .lifecycle-step .step-pct { font-size: 15px; }
+
+            .info-grid { grid-template-columns: 1fr; gap: 12px; }
+            .info-item { padding: 16px 18px; }
+            .info-item .value { font-size: 14px; }
+
+            .biz-grid { grid-template-columns: 1fr; gap: 12px; }
+
+            .badge-group { gap: 6px; }
+            .badge { padding: 6px 12px; font-size: 12px; }
+
+            .collapse-section summary { padding: 14px 16px; font-size: 14px; }
+            .collapse-section .collapse-body { padding: 16px; }
+
+            .timeline { padding-left: 20px; }
+            .timeline::before { left: 6px; }
+            .timeline-item { padding: 12px 16px; margin-bottom: 16px; }
+            .timeline-item::before { left: -20px; width: 12px; height: 12px; top: 20px; }
+
+            .footer { padding: 18px 12px; font-size: 12px; }
+        }
+
+        /* ===== Small Mobile (≤480px) ===== */
+        @media (max-width: 480px) {
+            .container { padding: 12px 8px 32px; }
+            .header-inner { padding: 12px 12px; }
+            .header h1 { font-size: 16px; }
+            .header h1 span { font-size: 12px; }
+            .header-meta { font-size: 11px; }
+            .nav a { padding: 10px 12px; font-size: 11px; }
+
+            .section-title { font-size: 15px; gap: 8px; }
+            .section-title .icon { width: 24px; height: 24px; font-size: 12px; border-radius: 6px; }
+
+            .stats-bar { gap: 8px; margin-bottom: 16px; }
+            .stat-card { padding: 12px 8px; }
+            .stat-card .stat-num { font-size: 20px; }
+            .stat-card .stat-label { font-size: 10px; }
+
+            .filter-btn { padding: 5px 10px; font-size: 11px; min-height: 36px; }
+
+            .m-project-card .m-card-header { padding: 12px 12px 8px; }
+            .m-project-card .m-card-header .m-title { font-size: 13px; }
+            .m-project-card .m-card-body { padding: 0 12px 12px; }
+            .m-field { padding: 7px 0; font-size: 12px; }
+            .m-field .m-label { min-width: 62px; max-width: 62px; font-size: 10px; }
+            .m-field .m-value.amount { font-size: 14px; }
+
+            .roadmap-label { padding: 6px 10px; font-size: 12px; }
+            .roadmap-item { font-size: 10px; padding: 5px 8px; }
+
+            .unit-summary { grid-template-columns: 1fr; }
+
+            .card { padding: 14px 12px; }
+            .card h3 { font-size: 14px; }
+            .card p { font-size: 13px; }
+
+            .lifecycle-step .step-label { font-size: 10px; }
+            .lifecycle-step .step-pct { font-size: 14px; }
+
+            .contact-bar { padding: 12px 14px; }
+            .contact-bar-title { font-size: 13px; }
+            .contact-bar-name { font-size: 15px; }
+            .contact-bar-info { font-size: 12px; }
+
+            .info-item { padding: 14px 14px; }
+            .info-item .label { font-size: 10px; }
+            .info-item .value { font-size: 13px; }
+
+            .badge { padding: 5px 10px; font-size: 11px; }
+            .badge-group { gap: 5px; }
+
+            .collapse-section summary { padding: 12px 14px; font-size: 13px; gap: 8px; }
+            .collapse-section .collapse-body { padding: 14px 12px; }
+
+            .timeline { padding-left: 16px; }
+            .timeline-item { padding: 10px 12px; }
+            .timeline-item .year { font-size: 12px; }
+            .timeline-item h4 { font-size: 13px; }
+            .timeline-item p { font-size: 12px; }
+
+            .footer { font-size: 11px; padding: 16px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== Header + Nav ===== -->
+<div class="header">
+    <div class="header-inner">
+        <h1>成都中国青年旅行社有限公司 <span>2027年度奖补项目申报清单</span></h1>
+        <div class="header-meta">编制日期：2026年10月19日 &nbsp;|&nbsp; 目标申报年度：2027年度 &nbsp;|&nbsp; 统一社会信用代码：9151010063311995XQ &nbsp;|&nbsp; 注册地：成都高新区</div>
+    </div>
+    <div class="nav">
+        <div class="nav-inner">
+            <a href="#projects" class="active">可申报项目清单</a>
+            <a href="#policy">政策依据汇总</a>
+            <a href="#tips">重要提示</a>
+            <a href="#company">企业详情 &#9660;</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- ═══ 首屏核心板块 ═══ -->
+
+    <!-- ===== 1. 可申报项目清单（首屏第一板块） ===== -->
+    <div class="section" id="projects">
+        <div class="section-title">
+            <div class="icon">1</div>
+            2027年可申报奖补项目清单
+        </div>
+
+        <!-- 统计摘要 -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-num">8</div>
+                <div class="stat-label">清单项目总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">~70</div>
+                <div class="stat-label">2027年度预估可获合计（万元）</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">0</div>
+                <div class="stat-label">国家级项目</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">8</div>
+                <div class="stat-label">省/市/区级项目</div>
+            </div>
+        </div>
+
+        <!-- 层级筛选 -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTable('all')">全部</button>
+            <button class="filter-btn" onclick="filterTable('national')">国家级</button>
+            <button class="filter-btn" onclick="filterTable('province')">省级</button>
+            <button class="filter-btn" onclick="filterTable('city')">市级</button>
+            <button class="filter-btn" onclick="filterTable('district')">区级</button>
+        </div>
+
+        <div class="card" style="background:#f8fbff; border-color:#cfe3f5; padding:18px 22px;">
+            <p style="font-size:13.5px; color:#34597a; margin:0;">
+                <strong>口径说明：</strong>“2027年度预估可获合计”只累加状态为“窗口进行中/窗口前准备”的4个项目（约70万元）；4个“需先谋划”项目约190万元<strong>未计入</strong>上方合计。
+                本企业为轻资产旅行社，资金类通道集中在文旅与商务条线的引客、入境、活动、场景方向，单项上限约10—100万元；不存在可直接套用的制造业技改/国债设备更新通道。
+            </p>
+        </div>
+
+        <!-- 桌面端：数据表格（11列，每行需 data-level 属性） -->
+        <div class="table-wrapper">
+            <table id="projectTable">
+                <thead>
+                    <tr>
+                        <th style="width:40px">序号</th>
+                        <th style="min-width:180px">可申报项目名称</th>
+                        <th style="min-width:100px">项目类别</th>
+                        <th style="min-width:110px">归口部门</th>
+                        <th style="min-width:80px">申报层级</th>
+                        <th style="min-width:80px">申报周期</th>
+                        <th style="min-width:100px">预计奖补金额（万元）</th>
+                        <th style="min-width:120px">业务切入点</th>
+                        <th style="min-width:220px">申报核心条件</th>
+                        <th style="min-width:200px">所需材料</th>
+                        <th style="min-width:200px">政策依据（官方文件）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-level="province">
+                        <td data-label="序号">1</td>
+                        <td data-label="项目名称"><strong>四川省发展入境旅游激励</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">入境激励</span></td>
+                        <td data-label="归口部门">四川省文化和旅游厅（国际交流与合作处）；成都市文广旅局初审</td>
+                        <td data-label="申报层级"><span class="level-tag level-province">省级</span></td>
+                        <td data-label="申报周期">2027年3月31日前（申报2026年度数据）<br><span class="win-tag win-next">窗口前准备</span></td>
+                        <td data-label="预计奖补" class="amount">25</td>
+                        <td data-label="业务方向">
+                            <span class="tech-tag hw">入境地接</span>
+                            <span class="tech-tag">远程市场</span>
+                            <span class="tech-tag ai">包机</span>
+                        </td>
+                        <td data-label="核心条件">依法在川纳税、具有独立法人资格的旅行社；2026年度组织境外游客来川、在川住宿2夜（含）以上；全国旅游监管服务平台团队系统与四川文化旅游统计综合管理平台完整填报；同一批游客组团社与地接社不得重复申报；单企业年度全部激励合计≤100万元（2023年办法口径，新细则分档以省厅2027年通知为准）</td>
+                        <td data-label="所需材料">申报书；旅行社业务经营许可证、营业执照；上年度完税凭证；信用中国专项信用报告；地接合同/确认计划、游客名单、住宿发票及酒店入住确认；电子行程单（按团归档）；审计报告</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="http://wlt.sc.gov.cn/scwlt/gsgg/2023/5/9/41e05b11bc4c471eb4a291ed0cfef19e.shtml" target="_blank" rel="noopener">《四川省发展入境旅游激励办法（试行）》（川文旅发〔2023〕25号）<span class="ext-icon">&#8599;</span></a><br><a href="https://wlt.sc.gov.cn/scwlt/gsgg/2026/8/16/af81fd5c545643349462e4f59856e4b9.shtml" target="_blank" rel="noopener">2025年度评审结果公示（2026-08-16）<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="province">
+                        <td data-label="序号">2</td>
+                        <td data-label="项目名称"><strong>四川省“蜀里安逸”消费新场景运营激励（“乐游蜀地”方向）</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">消费促进</span></td>
+                        <td data-label="归口部门">四川省商务厅、四川省财政厅；成都市商务局推荐</td>
+                        <td data-label="申报层级"><span class="level-tag level-province">省级</span></td>
+                        <td data-label="申报周期">2027年度窗口以省政府新一轮稳增长政策为准（上一轮为2026年4—9月）<br><span class="win-tag win-plan">需先谋划</span></td>
+                        <td data-label="预计奖补" class="amount">50</td>
+                        <td data-label="业务方向">
+                            <span class="tech-tag hw">入境消费场景</span>
+                            <span class="tech-tag">研学</span>
+                            <span class="tech-tag sw">商旅文融合</span>
+                        </td>
+                        <td data-label="核心条件">须先经区（市）县商务部门征集、市（州）推荐、商务厅评审纳入省级“蜀里安逸”消费新场景；在窗口期举办“消费+”多元融合促消费活动；活动期营业收入同比增长5%以上且年营业收入超过2000万元；按活动实际投入的50%补助，单户企业最高100万元；同一项目不得重复享受省级其他类别奖补</td>
+                        <td data-label="所需材料">项目申报表及建设运营方案；实际投资专项审计报告及票据；绩效目标申报表；场景照片；信用中国（四川）专项信用报告</td>
+                        <td data-label="政策依据" class="policy-ref">川办发〔2026〕12号《关于巩固拓展经济稳中向好势头的若干政策措施》（2026-04-06）<br>川财建〔2026〕170号（资金已下达，附件含消费新场景运营激励明细）<br><a href="https://www.sc.gov.cn/10462/10464/13298/14097/2026/4/29/025caa5cd97348aea5a67f12ad53c240.shtml" target="_blank" rel="noopener">财政厅政策解读（2026-04-29）<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="city">
+                        <td data-label="序号">3</td>
+                        <td data-label="项目名称"><strong>成都市“开拓国内客源市场（旅行社引客）”补助</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">引客补助</span></td>
+                        <td data-label="归口部门">成都市文化广电旅游局（市场管理处）</td>
+                        <td data-label="申报层级"><span class="level-tag level-city">市级</span></td>
+                        <td data-label="申报周期">2027年第一批，预计2月下旬发指南、3月上旬截止（2026年度截止3月9日）<br><span class="win-tag win-next">窗口前准备</span></td>
+                        <td data-label="预计奖补" class="amount">10</td>
+                        <td data-label="业务方向">
+                            <span class="tech-tag hw">省外来蓉</span>
+                            <span class="tech-tag">住宿3晚+</span>
+                        </td>
+                        <td data-label="核心条件">年组织接待省外来蓉游客≥3000人次；接待团队在成都住宿≥3晚；总社及分支机构足额缴纳旅游服务质量保证金并在全国旅游监管服务平台备案；近3年无失信、无处罚未满1年；分社/服务网点统一经总社汇总申报；按≤10元/人次补助，单个旅行社≤15万元</td>
+                        <td data-label="所需材料">项目申请书（含承诺书）；组织接待省外来蓉团队统计表及佐证（电子行程单、意外险保单、住宿发票）；事前绩效自评与绩效目标表（市本级企业）</td>
+                        <td data-label="政策依据" class="policy-ref">《2026年度成都市市级旅游业发展专项资金（第一批）项目申报指南》（成都市文广旅局，2026-02-26）<br>成文广旅发〔2025〕4号《成都市进一步促进旅游业发展的若干措施》及实施细则</td>
+                    </tr>
+                    <tr data-level="city">
+                        <td data-label="序号">4</td>
+                        <td data-label="项目名称"><strong>成都市“开拓入境客源市场（组织接待境外游客来蓉）”补助</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">入境补助</span></td>
+                        <td data-label="归口部门">成都市文化广电旅游局（市场管理处）</td>
+                        <td data-label="申报层级"><span class="level-tag level-city">市级</span></td>
+                        <td data-label="申报周期">2027年第一批，预计2月下旬发指南、3月上旬截止<br><span class="win-tag win-next">窗口前准备</span></td>
+                        <td data-label="预计奖补" class="amount">30</td>
+                        <td data-label="业务方向">
+                            <span class="tech-tag hw">境外来蓉</span>
+                            <span class="tech-tag">住宿3晚+</span>
+                        </td>
+                        <td data-label="核心条件">年组织接待境外游客来蓉≥500人次；入境团队至少在成都住宿3晚；质保金、平台备案、信用条件同序号3；按≤80元/人次补助，单个旅行社≤60万元；同一名境外游客不得与过境免签产品类奖补重复享受</td>
+                        <td data-label="所需材料">项目申请书（含承诺书）；组织接待境外来蓉团队统计表及佐证（游客名单及国别、电子行程单、意外险保单、酒店入住确认）；绩效目标表（市本级企业）</td>
+                        <td data-label="政策依据" class="policy-ref">《2026年度成都市市级旅游业发展专项资金（第一批）项目申报指南》（成都市文广旅局，2026-02-26）<br>成文广旅发〔2025〕4号及实施细则</td>
+                    </tr>
+                    <tr data-level="city">
+                        <td data-label="序号">5</td>
+                        <td data-label="项目名称"><strong>成都市“开拓入境客源市场（赴境外参加旅游营销活动）”补助</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">营销补助</span></td>
+                        <td data-label="归口部门">成都市文化广电旅游局（市场管理处）</td>
+                        <td data-label="申报层级"><span class="level-tag level-city">市级</span></td>
+                        <td data-label="申报周期">2027年第一批/第二批，按活动发生年度认定<br><span class="win-tag win-next">窗口前准备</span></td>
+                        <td data-label="预计奖补" class="amount">6</td>
+                        <td data-label="业务方向">
+                            <span class="tech-tag">境外营销</span>
+                            <span class="tech-tag ai">旅展</span>
+                        </td>
+                        <td data-label="核心条件">赴境外参加文旅部门组织的旅游营销活动，并推广含成都的文旅资源和线路；按因公出访标准补助机票、住宿、伙食、公杂，≤3万元/人次；每家全年≤2次、每次≤2人；须有出访批件与完整票据链</td>
+                        <td data-label="所需材料">申请书；参团/出访通知或证明；国际往返机票及住宿票据；护照首页及出入境签章页；活动总结与现场照片</td>
+                        <td data-label="政策依据" class="policy-ref">《2026年度成都市市级旅游业发展专项资金（第一批）项目申报指南》（成都市文广旅局，2026-02-26）<br>成文广旅发〔2025〕4号及实施细则</td>
+                    </tr>
+                    <tr data-level="city">
+                        <td data-label="序号">6</td>
+                        <td data-label="项目名称"><strong>成都市“小微型旅游企业旅游项目贷款贴息”</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">贷款贴息</span></td>
+                        <td data-label="归口部门">成都市文化广电旅游局（文旅产业处）</td>
+                        <td data-label="申报层级"><span class="level-tag level-city">市级</span></td>
+                        <td data-label="申报周期">2027年第一批（贴息期为上一年实际发生利息）<br><span class="win-tag win-plan">需先谋划</span></td>
+                        <td data-label="预计奖补" class="amount">30</td>
+                        <td data-label="业务方向">
+                            <span class="tech-tag sw">项目融资</span>
+                            <span class="tech-tag">贴息</span>
+                        </td>
+                        <td data-label="核心条件">须为小型/微型旅游企业（本企业83名员工、4.62亿元营收的划型结果须先与市局书面确认，存在被划为中型而不适格的风险）；贷款须用于旅游项目；按同期LPR的50%贴息，单次申报贴息期1年，最高100万元；竞争性评审</td>
+                        <td data-label="所需材料">申请书；贷款合同及付息凭证；项目投资与建设进度证明；审计报告；中小微企业划型证明</td>
+                        <td data-label="政策依据" class="policy-ref">《2026年度成都市市级旅游业发展专项资金（第一批）项目申报指南》（成都市文广旅局，2026-02-26）<br>成文广旅发〔2025〕4号及实施细则</td>
+                    </tr>
+                    <tr data-level="city">
+                        <td data-label="序号">7</td>
+                        <td data-label="项目名称"><strong>成都市旅游企业主营业务收入首次超5亿元奖励（免申即享）</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">规模奖励</span></td>
+                        <td data-label="归口部门">成都市文化广电旅游局（文旅产业处）；区县比对确认</td>
+                        <td data-label="申报层级"><span class="level-tag level-city">市级</span></td>
+                        <td data-label="申报周期">2027年第一批（免申即享，由区县填报清单）<br><span class="win-tag win-plan">需先谋划</span></td>
+                        <td data-label="预计奖补" class="amount">50</td>
+                        <td data-label="业务方向">
+                            <span class="tech-tag">规（限）上</span>
+                            <span class="tech-tag ai">营收上台阶</span>
+                        </td>
+                        <td data-label="核心条件">规（限）上旅游企业；主营业务收入首次超过5亿元；本企业2023年营收4.62亿元，2026—2027年若首次突破5亿元即可触发；同一企业同类奖励不重复享受；数据以统计联网直报为准</td>
+                        <td data-label="所需材料">无需企业申报；由区（市）县文旅部门依据统计联网直报数据比对并填报拟免申即享清单</td>
+                        <td data-label="政策依据" class="policy-ref">《2026年度成都市市级旅游业发展专项资金（第一批）项目申报指南》（成都市文广旅局，2026-02-26）<br>成文广旅发〔2025〕4号及实施细则</td>
+                    </tr>
+                    <tr data-level="city">
+                        <td data-label="序号">8</td>
+                        <td data-label="项目名称"><strong>成都市“重大品牌化旅游产业活动”补助</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">活动补助</span></td>
+                        <td data-label="归口部门">成都市文化广电旅游局（文旅产业处）</td>
+                        <td data-label="申报层级"><span class="level-tag level-city">市级</span></td>
+                        <td data-label="申报周期">2027年第二批，预计8月上旬线上申报（2025年度第二批为8月1—11日）<br><span class="win-tag win-plan">需先谋划</span></td>
+                        <td data-label="预计奖补" class="amount">60</td>
+                        <td data-label="业务方向">
+                            <span class="tech-tag hw">熊猫专列</span>
+                            <span class="tech-tag">入境游活动</span>
+                            <span class="tech-tag">会奖</span>
+                        </td>
+                        <td data-label="核心条件">申报主体须为活动主（承）办或执行单位，同一活动不得由多家重复申报；成功举办后按不超过实际市场投入30%补助，单个≤300万元；每个区（市）县至多推荐2个项目；须有活动批准文件及第三方费用专项审计</td>
+                        <td data-label="所需材料">申请书；活动策划书及批准文件；费用专项审计报告或支出明细+合同/发票/支付凭证；绩效目标表；媒体宣传数据</td>
+                        <td data-label="政策依据" class="policy-ref">《2026年度成都市市级旅游业发展专项资金（第一批）项目申报指南》（成都市文广旅局，2026-02-26）<br>《2025年度成都市市级旅游业发展专项资金（第二批）项目申报指南》（2025-07-31）</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 移动端：卡片视图（与表格行一一对应） -->
+        <div class="mobile-cards" id="mobileCards">
+            <div class="m-project-card" data-level="province">
+                <div class="m-card-header">
+                    <div class="m-seq">1</div>
+                    <div class="m-title">四川省发展入境旅游激励</div>
+                    <span class="level-tag level-province">省级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">入境激励</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">四川省文化和旅游厅（国际交流与合作处）；成都市文广旅局初审</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">2027年3月31日前（申报2026年度数据）<br><span class="win-tag win-next">窗口前准备</span></div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">25万元</div></div>
+                    <div class="m-field"><div class="m-label">业务方向</div><div class="m-value"><span class="tech-tag hw">入境地接</span><span class="tech-tag">远程市场</span><span class="tech-tag ai">包机</span></div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">依法在川纳税、独立法人旅行社；2026年度组织境外游客来川、在川住宿2夜（含）以上；两个平台完整填报；同一批游客组团社与地接社不得重复申报；单企业年度合计≤100万元（2023年口径，新细则以2027年通知为准）</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">申报书；许可证/营业执照；完税凭证；信用中国报告；地接合同、游客名单、住宿发票及入住确认；电子行程单（一团一档）；审计报告</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="http://wlt.sc.gov.cn/scwlt/gsgg/2023/5/9/41e05b11bc4c471eb4a291ed0cfef19e.shtml" target="_blank" rel="noopener">川文旅发〔2023〕25号<span class="ext-icon">&#8599;</span></a><br><a href="https://wlt.sc.gov.cn/scwlt/gsgg/2026/8/16/af81fd5c545643349462e4f59856e4b9.shtml" target="_blank" rel="noopener">2025年度评审结果公示<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <div class="m-project-card" data-level="province">
+                <div class="m-card-header">
+                    <div class="m-seq">2</div>
+                    <div class="m-title">四川省“蜀里安逸”消费新场景运营激励</div>
+                    <span class="level-tag level-province">省级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">消费促进</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">四川省商务厅、四川省财政厅；成都市商务局推荐</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">2027年度窗口以省政府新一轮稳增长政策为准（上一轮为2026年4—9月）<br><span class="win-tag win-plan">需先谋划</span></div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">50万元（未计入合计）</div></div>
+                    <div class="m-field"><div class="m-label">业务方向</div><div class="m-value"><span class="tech-tag hw">入境消费场景</span><span class="tech-tag">研学</span><span class="tech-tag sw">商旅文融合</span></div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">须先纳入省级“蜀里安逸”消费新场景；窗口期举办“消费+”促消费活动；活动期营收同比增长5%以上且年营收>2000万元；按活动实际投入50%补助，单户≤100万元；不得重复享受省级其他类别奖补</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">申报表及运营方案；实际投资专项审计报告及票据；绩效目标表；场景照片；信用报告</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref">川办发〔2026〕12号（2026-04-06）；川财建〔2026〕170号<br><a href="https://www.sc.gov.cn/10462/10464/13298/14097/2026/4/29/025caa5cd97348aea5a67f12ad53c240.shtml" target="_blank" rel="noopener">财政厅政策解读<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <div class="m-project-card" data-level="city">
+                <div class="m-card-header">
+                    <div class="m-seq">3</div>
+                    <div class="m-title">成都市“开拓国内客源市场（旅行社引客）”补助</div>
+                    <span class="level-tag level-city">市级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">引客补助</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">成都市文化广电旅游局（市场管理处）</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">2027年第一批，预计2月下旬发指南、3月上旬截止<br><span class="win-tag win-next">窗口前准备</span></div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">10万元</div></div>
+                    <div class="m-field"><div class="m-label">业务方向</div><div class="m-value"><span class="tech-tag hw">省外来蓉</span><span class="tech-tag">住宿3晚+</span></div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">年组织接待省外来蓉≥3000人次；在蓉住宿≥3晚；足额缴纳质保金并完成平台备案；近3年无失信；分社统一由总社汇总申报；≤10元/人次，单个旅行社≤15万元</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">申请书（含承诺书）；接待团队统计表及佐证（行程单、保险单、住宿发票）；绩效目标表</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref">2026年度成都市市级旅游业发展专项资金（第一批）项目申报指南（2026-02-26）；成文广旅发〔2025〕4号</div></div>
+                </div>
+            </div>
+            <div class="m-project-card" data-level="city">
+                <div class="m-card-header">
+                    <div class="m-seq">4</div>
+                    <div class="m-title">成都市“开拓入境客源市场（组织接待境外游客来蓉）”补助</div>
+                    <span class="level-tag level-city">市级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">入境补助</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">成都市文化广电旅游局（市场管理处）</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">2027年第一批，预计2月下旬发指南、3月上旬截止<br><span class="win-tag win-next">窗口前准备</span></div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">30万元</div></div>
+                    <div class="m-field"><div class="m-label">业务方向</div><div class="m-value"><span class="tech-tag hw">境外来蓉</span><span class="tech-tag">住宿3晚+</span></div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">年组织接待境外游客来蓉≥500人次；在蓉住宿≥3晚；质保金、平台备案、信用条件同序号3；≤80元/人次，单个旅行社≤60万元；同一游客不得重复享受同类奖补</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">申请书（含承诺书）；境外团队统计表及佐证（名单及国别、行程单、保险单、入住确认）；绩效目标表</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref">2026年度成都市市级旅游业发展专项资金（第一批）项目申报指南（2026-02-26）；成文广旅发〔2025〕4号</div></div>
+                </div>
+            </div>
+            <div class="m-project-card" data-level="city">
+                <div class="m-card-header">
+                    <div class="m-seq">5</div>
+                    <div class="m-title">成都市“开拓入境客源市场（赴境外参加旅游营销活动）”补助</div>
+                    <span class="level-tag level-city">市级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">营销补助</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">成都市文化广电旅游局（市场管理处）</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">2027年第一批/第二批，按活动发生年度认定<br><span class="win-tag win-next">窗口前准备</span></div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">6万元</div></div>
+                    <div class="m-field"><div class="m-label">业务方向</div><div class="m-value"><span class="tech-tag">境外营销</span><span class="tech-tag ai">旅展</span></div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">赴境外参加文旅部门组织的营销活动并推广含成都的线路；≤3万元/人次；每家全年≤2次、每次≤2人；须有出访批件与完整票据链</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">申请书；出访通知/证明；机票及住宿票据；护照及出入境签章；活动总结与照片</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref">2026年度成都市市级旅游业发展专项资金（第一批）项目申报指南（2026-02-26）；成文广旅发〔2025〕4号</div></div>
+                </div>
+            </div>
+            <div class="m-project-card" data-level="city">
+                <div class="m-card-header">
+                    <div class="m-seq">6</div>
+                    <div class="m-title">成都市“小微型旅游企业旅游项目贷款贴息”</div>
+                    <span class="level-tag level-city">市级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">贷款贴息</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">成都市文化广电旅游局（文旅产业处）</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">2027年第一批（贴息期为上一年实际发生利息）<br><span class="win-tag win-plan">需先谋划</span></div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">30万元（未计入合计）</div></div>
+                    <div class="m-field"><div class="m-label">业务方向</div><div class="m-value"><span class="tech-tag sw">项目融资</span><span class="tech-tag">贴息</span></div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">须为小型/微型旅游企业（本企业划型须先与市局书面确认）；贷款用于旅游项目；按同期LPR的50%贴息，单次1年，≤100万元；竞争性评审</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">申请书；贷款合同及付息凭证；项目投资与进度证明；审计报告；划型证明</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref">2026年度成都市市级旅游业发展专项资金（第一批）项目申报指南（2026-02-26）；成文广旅发〔2025〕4号</div></div>
+                </div>
+            </div>
+            <div class="m-project-card" data-level="city">
+                <div class="m-card-header">
+                    <div class="m-seq">7</div>
+                    <div class="m-title">成都市旅游企业主营业务收入首次超5亿元奖励</div>
+                    <span class="level-tag level-city">市级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">规模奖励</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">成都市文化广电旅游局（文旅产业处）；区县比对确认</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">2027年第一批（免申即享）<br><span class="win-tag win-plan">需先谋划</span></div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">50万元（未计入合计）</div></div>
+                    <div class="m-field"><div class="m-label">业务方向</div><div class="m-value"><span class="tech-tag">规（限）上</span><span class="tech-tag ai">营收上台阶</span></div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">规（限）上旅游企业；主营业务收入首次超过5亿元；本企业2023年营收4.62亿元，2026—2027年首次突破5亿元即可触发；同类奖励不重复享受</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">无需企业申报；区县依据统计联网直报数据比对填报</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref">2026年度成都市市级旅游业发展专项资金（第一批）项目申报指南（2026-02-26）；成文广旅发〔2025〕4号</div></div>
+                </div>
+            </div>
+            <div class="m-project-card" data-level="city">
+                <div class="m-card-header">
+                    <div class="m-seq">8</div>
+                    <div class="m-title">成都市“重大品牌化旅游产业活动”补助</div>
+                    <span class="level-tag level-city">市级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">活动补助</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">成都市文化广电旅游局（文旅产业处）</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">2027年第二批，预计8月上旬线上申报<br><span class="win-tag win-plan">需先谋划</span></div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">60万元（未计入合计）</div></div>
+                    <div class="m-field"><div class="m-label">业务方向</div><div class="m-value"><span class="tech-tag hw">熊猫专列</span><span class="tech-tag">入境游活动</span><span class="tech-tag">会奖</span></div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">须为主（承）办或执行单位；同一活动不得重复申报；按实际市场投入≤30%补助，单个≤300万元；每区（市）县至多推荐2个；须有批准文件与费用专项审计</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">申请书；活动策划书及批准文件；费用专项审计报告或支出明细+合同/发票/凭证；绩效目标表；媒体数据</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref">2026年度成都市市级旅游业发展专项资金（第一批）项目申报指南（2026-02-26）；2025年度第二批项目申报指南（2025-07-31）</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- V15 倒计时式排期 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#128197; 2027年度申报倒计时与前置动作排期</h3>
+            <div class="card" style="background:#fff5f5; border-color:#f3c2c2; padding:16px 20px;">
+                <p style="font-size:13.5px; color:#a33; margin:0;">
+                    <strong>最紧急：</strong>2027年第一季度两个窗口并行——成都市第一批（预计3月上旬截止）与四川省入境旅游激励（3月31日截止），且二者共用同一套“一团一档”团队档案与上年度审计报告。必须在2026年12月启动数据归集，否则两个窗口会同时落空。
+                </p>
+            </div>
+            <div class="roadmap">
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q1<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">1-3月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item province"><strong>&#9312;</strong> 省入境旅游激励<br><span style="opacity:0.7">3月31日前 | 省文旅厅国际处</span></div>
+                        <div class="roadmap-item city"><strong>&#9313;&#9314;&#9315;</strong> 成都市第一批（引客/入境/境外营销）<br><span style="opacity:0.7">3月上旬截止 | 市文广旅局市场管理处</span></div>
+                        <div class="roadmap-item action"><strong>&#9888;</strong> 2026年度团队档案归集与平台补录<br><span style="opacity:0.7">须在2月底前完成 | 运营+财务</span></div>
+                        <div class="roadmap-item action"><strong>&#9888;</strong> 审计报告、完税凭证、质保金证明、信用报告<br><span style="opacity:0.7">1月底前备齐 | 财务+法务</span></div>
+                        <div class="roadmap-item action"><strong>&#9888;</strong> 2026年财务关账即锁定营收是否首破5亿元<br><span style="opacity:0.7">触发&#9318;免申即享 | 财务</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q2<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">4-6月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item action"><strong>&#9888;</strong> 申报“蜀里安逸”消费新场景（区→市→省三级）<br><span style="opacity:0.7">成都每类不超过5个，5月前完成 | 商务口径</span></div>
+                        <div class="roadmap-item action"><strong>&#9888;</strong> 2027年度境外旅展/省厅组团出访事前计划<br><span style="opacity:0.7">3月底前报省文旅厅国际处 | 入境部</span></div>
+                        <div class="roadmap-item action"><strong>&#9888;</strong> 2027年4—9月“消费+”活动方案与预算<br><span style="opacity:0.7">为&#9313;运营激励做前置 | 市场部</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q3<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">7-9月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item city"><strong>&#9319;</strong> 成都市第二批（重大品牌化旅游产业活动）<br><span style="opacity:0.7">预计8月上旬 | 市文广旅局文旅产业处</span></div>
+                        <div class="roadmap-item action"><strong>&#9888;</strong> 活动落地执行与费用归集、第三方专项审计<br><span style="opacity:0.7">活动结束后1个月内 | 项目组+财务</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q4<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">10-12月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item action"><strong>&#9888;</strong> 2027年度旅游项目谋划+银行贷款落地<br><span style="opacity:0.7">为&#9317;贴息做前置，须实际付息 | 投资+财务</span></div>
+                        <div class="roadmap-item action"><strong>&#9888;</strong> 多主体分工与重复申报排查<br><span style="opacity:0.7">同一活动/同一批游客只报一次 | 集团协调</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 归口部门项目分布 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#127970; 归口部门项目分布</h3>
+            <div class="unit-summary">
+                <div class="unit-card">
+                    <div class="unit-name">四川省文化和旅游厅</div>
+                    <div class="unit-count">1</div>
+                    <div class="unit-desc">省级入境旅游激励（3月31日前）</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">四川省商务厅 / 财政厅</div>
+                    <div class="unit-count">1</div>
+                    <div class="unit-desc">“蜀里安逸”消费新场景运营激励</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">成都市文化广电旅游局</div>
+                    <div class="unit-count">6</div>
+                    <div class="unit-desc">引客2项 / 境外营销1项 / 贴息1项 / 规模奖励1项 / 活动1项</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 金额量级升级路径 -->
+        <div class="action-box">
+            <h4>&#128200; 金额量级升级路径（本企业可触达的天花板在哪里）</h4>
+            <ul>
+                <li><strong>百万级（本清单，合计约70万元）：</strong>文旅与商务条线的引客、入境、境外营销、消费场景、活动类，单项上限约10—100万元，不要求固定资产。这是轻资产旅行社的主战场。</li>
+                <li><strong>千万级（需换身份）：</strong>旅游基础设施新改扩建（≤300万元）、旅游领域设备更新（设备投资≥1000万元、补助≤300万元）、旅游产业园区重大产业化项目（总投资≥2亿元、已投30%以上、补助≤500万元）。均要求申报主体是“项目业主”且有在建固定资产，旅行社不能以轻资产主体直接申报；须与景区、酒店、交通或园区业主联合，由业主申报、旅行社作为运营方参与分成。</li>
+                <li><strong>亿元级（不建议投入）：</strong>中央预算内投资、超长期特别国债“两重”文旅方向，要求在建固定资产项目、四证四评、入国家重大建设项目库，民企通常需绑定政府平台或央企国企牵头。本企业不具备条件，短期不布局。</li>
+                <li><strong>唯一可冲的百万级单项：</strong>省级入境游激励第一名100万元。其权重为入境人天总量50%、增量25%、远程市场10%、新媒体5%、自主境外营销5%、包机5%——属“运营指标型”而非“投资型”，是旅行社凭业务能力可以够到的最高单项。建议把远程市场（亚洲以外，航班6小时以上）和包机作为2027年重点抓手。</li>
+            </ul>
+        </div>
+
+        <!-- 多主体拆分 -->
+        <div class="action-box">
+            <h4>&#128101; 多主体拆分申报（哪些钱不能用总社一个主体报）</h4>
+            <ul>
+                <li><strong>成都中国青年旅行社有限公司（总社，高新区，独立法人）：</strong>旅行社条线全部项目由总社统一汇总申报。全省398家分支机构（5家分社+117家服务网点）为非独立法人，不得单独申报；同一批入境游客，组团社与地接社只能由一家申报，省外组团社也不得就同一批游客在四川重复申报。</li>
+                <li><strong>成都文旅旅游营销管理有限公司（同一法定代表人、集团内独立法人）：</strong>会展、营销、活动执行类业务可独立作为申报主体，但同一活动的主（承）办、执行单位不得重复申报——须在集团层面先划分活动归属。</li>
+                <li><strong>成都麦思文化传播有限公司（法定代表人100%持股）：</strong>文化传播、广告、内容制作类业务可走文化产业与文创IP数字化开发类通道（当年度细则与门槛须另行核实），不与总社额度互占。</li>
+                <li><strong>成都天府旅游产业投资集团有限责任公司（母公司）：</strong>重大文旅项目、中央预算内、国债“两重”须由项目业主（母公司或项目公司）申报，旅行社不占其额度，也不得以旅行社名义包装。</li>
+                <li><strong>成都导游管理服务有限公司（参股20%，不控股）：</strong>不纳入合并申报，不参与额度分配。</li>
+                <li><strong>属地口径：</strong>总社营业执照住所为成都高新区万象南路399号，市级项目按高新区报送；省级项目按属地经成都市文广旅局初审后报省厅，不得越级申报。</li>
+            </ul>
+        </div>
+
+        <!-- 待核实通道 -->
+        <div class="action-box">
+            <h4>&#9888; 部分通道待核实（未计入上方清单与总额）</h4>
+            <ul>
+                <li><strong>省级境外旅展/组团出访补助（单展位≤4万元、单人≤5万元）：</strong>川文旅发〔2023〕25号有明确标准，但2026年8月2025年度评审已改用《四川省发展入境旅游激励实施细则》，2026年3月《四川省入境旅游激励评审办法（试行）（征求意见稿）》拟将境外营销、包机并入综合加权排名并废止原办法。2027年度是否仍单列、标准是否变化，须向省文旅厅国际交流与合作处（028-86702915）书面确认。</li>
+                <li><strong>国家层面旅行服务出口/入境消费资金：</strong>商务部等9部门《关于促进旅行服务出口 扩大入境消费的政策措施》（2026年3月）第16条明确“对符合条件的从事入境消费服务的中小微企业贷款给予融资担保和贴息支持”；商服贸发〔2025〕186号要求用好中央和地方资金渠道、建设服务贸易统保平台。成都已入选国家服务贸易创新发展示范区。四川省2027年度配套资金规模与申报口径未查到正文，须向省商务厅服务贸易处确认后再定是否投入精力。</li>
+                <li><strong>成都高新区区级专项：</strong>本次检索到的高新区“专项促消费活动竞争性立项”仅限电商平台企业（须持支付、增值电信等许可），算力券、模型券面向AI与算力主体，均与本行业不匹配；暂未发现面向旅行社的区级资金通道。建议与高新区商务文化旅游局商贸流通处（028-85258605）确认是否有文旅/服务业切块资金。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ===== 2. 政策依据汇总 ===== -->
+    <div class="section" id="policy">
+        <div class="section-title">
+            <div class="icon">2</div>
+            政策依据汇总
+        </div>
+
+        <div class="card" style="background:#f8fbff; border-color:#cfe3f5; padding:16px 20px;">
+            <p style="font-size:13px; color:#34597a; margin:0;">
+                带 <span style="color:var(--info)">&#8599;</span> 的为本次已实际打开复核的官方原文页；其余为文件名+文号（官网对本机访问返回 412/超时，或为下级政府转发页），申报前请以主管部门官网最新发布版本复核。
+            </p>
+        </div>
+
+        <!-- 国家级 -->
+        <div class="card policy-card">
+            <h3>国家级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="https://swt.sc.gov.cn/sccom/c202505091/2026/3/20/205c69cd0359402fb56178a6b9db998b.shtml" target="_blank" rel="noopener">商务部等9部门《关于促进旅行服务出口 扩大入境消费的政策措施》（2026-03-20，四川省商务厅转载）<span class="ext-icon">&#8599;</span></a>
+                    <div style="font-size:12.5px; color:var(--text-light); padding-left:16px;">第16条：对符合条件的从事入境消费服务的中小微企业贷款给予融资担保和贴息支持。</div>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> 商务部等9部门《关于促进服务出口的若干政策措施》（商服贸发〔2025〕186号，2025-09-22）
+                    <div style="font-size:12.5px; color:var(--text-light); padding-left:16px;">要求用好用足中央和地方现有资金渠道支持服务出口，加大出口信用保险支持，鼓励各地建设服务贸易统保平台。</div>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px;">
+                    <strong>3.</strong> 国务院《关于深入实施“人工智能+”行动的意见》（国发〔2025〕11号）——仅作为数字化/AI应用类项目的上位依据，本清单未据此生成项目。
+                </div>
+            </div>
+        </div>
+
+        <!-- 省级 -->
+        <div class="card policy-card">
+            <h3>四川省省级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="http://wlt.sc.gov.cn/scwlt/gsgg/2023/5/9/41e05b11bc4c471eb4a291ed0cfef19e.shtml" target="_blank" rel="noopener">《四川省发展入境旅游激励办法（试行）》（川文旅发〔2023〕25号）<span class="ext-icon">&#8599;</span></a>
+                    <div style="font-size:12.5px; color:var(--text-light); padding-left:16px;">入境人次50/80元、远程市场10万元、旅展4万元、组团出访5万元；单企业年度合计≤100万元。</div>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> <a href="https://wlt.sc.gov.cn/scwlt/gsgg/2026/8/16/af81fd5c545643349462e4f59856e4b9.shtml" target="_blank" rel="noopener">《2025年度四川省发展入境旅游激励项目评审结果公示》（2026-08-16）<span class="ext-icon">&#8599;</span></a>
+                    <div style="font-size:12.5px; color:var(--text-light); padding-left:16px;">证明2027年度申报所依据的新《四川省发展入境旅游激励实施细则》已实际执行，2025年度已评出20家旅行社。</div>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> 《四川省人民政府办公厅印发〈关于巩固拓展经济稳中向好势头的若干政策措施〉的通知》（川办发〔2026〕12号，2026-04-06）
+                    <div style="font-size:12.5px; color:var(--text-light); padding-left:16px;">实施消费新场景运营激励：符合条件的“蜀里安逸”消费新场景运营主体，按活动实际投入50%补助，单户最高100万元。</div>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>4.</strong> 四川省财政厅、商务厅《关于下达2026年第三批省级财政服务业发展专项资金预算的通知》（川财建〔2026〕170号，2026-08-24）
+                    <div style="font-size:12.5px; color:var(--text-light); padding-left:16px;">附件含“省政府新18条消费新场景运营激励资金安排明细表”，证明该通道有实际资金安排。</div>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px;">
+                    <strong>5.</strong> 四川省文化和旅游厅《关于印发四川省文旅融合品牌规划策划项目奖补政策等8个实施细则的通知》（川文旅发〔2025〕36号）
+                    <div style="font-size:12.5px; color:var(--text-light); padding-left:16px;">2025年度起省级文旅资金的总纲性文件；其中“经营主体培育”细则门槛为年度营收较上年新增5亿元以上，本企业体量不匹配，未列入清单。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 市级 -->
+        <div class="card policy-card">
+            <h3>成都市级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> 《2026年度成都市市级旅游业发展专项资金（第一批）项目申报指南》（成都市文化广电旅游局，2026-02-26）
+                    <div style="font-size:12.5px; color:var(--text-light); padding-left:16px;">旅行社引客≤10元/人次（≤15万元）、入境游客≤80元/人次（≤60万元）、境外营销≤3万元/人次、小微微旅游企业贴息≤100万元、营收首超5亿元奖励50万元、重大品牌化活动≤300万元。</div>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> 成都市文化广电旅游局《成都市进一步促进旅游业发展的若干措施》及其实施细则（成文广旅发〔2025〕4号）
+                    <div style="font-size:12.5px; color:var(--text-light); padding-left:16px;">市级旅游业专项资金各方向的上位政策依据。</div>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> 成都市财政局、成都市文化广电旅游局《成都市市级旅游业发展专项资金管理办法》（成财制〔2026〕15号）
+                    <div style="font-size:12.5px; color:var(--text-light); padding-left:16px;">资金使用、绩效与监督检查规则。</div>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px;">
+                    <strong>4.</strong> 成都市财政局、成都市文化广电旅游局《关于下达2026年成都市市级旅游业发展专项资金预算的通知》（成财教发〔2026〕86号，2026-09-28）
+                    <div style="font-size:12.5px; color:var(--text-light); padding-left:16px;">证明2026年度市级资金已完成预算下达，2027年度将按年度重新组织申报。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 3. 重要提示 + 固定板块 ===== -->
+    <div class="section" id="tips">
+        <div class="card" style="background: #fffbeb; border-color: #f5deb3;">
+            <h3 style="color: #b8860b;">&#9888;&#65039; 重要提示</h3>
+            <p style="font-size: 13px; color: #8b7355; margin-top: 8px;">
+                本清单所列信息基于公开资料整理，仅供参考。具体申报条件、奖补金额和时间节点以各级主管部门发布的最新官方文件为准。建议企业密切关注四川省文化和旅游厅、四川省商务厅、成都市文化广电旅游局、成都高新区商务文化旅游局的年度申报通知，提前做好材料准备。预计奖补金额为基于公开政策及企业实际经营规模的保守预估值，可能因政策调整而变化。成都市级三项金额按2026年度申报指南口径测算，2027年度以新指南为准；“需先谋划”项目不计入合计。
+            </p>
+            <!-- ▼▼▼ ⚠️ 固定板块：项目申报全生命周期 —— 所有企业完全一致，不可修改 ▼▼▼ -->
+            <div class="lifecycle-bar">
+                <h4>&#128203; 项目申报全生命周期</h4>
+                <div class="lifecycle-steps">
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">项目申报</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">评审批复</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">资金下达</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step" style="flex: 2;">
+                        <div class="bar"></div>
+                        <div class="step-label">结项验收</div>
+                        <div class="step-pct">40%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- ▲▲▲ 固定板块结束 ▲▲▲ -->
+        </div>
+
+        <!-- ▼▼▼ ⚠️ 固定板块：项目咨询联系人 —— 所有企业完全一致，不可修改 ▼▼▼ -->
+        <div class="contact-bar">
+            <div class="contact-bar-title">&#128222; 项目咨询联系人</div>
+            <div class="contact-bar-name">赵璐红</div>
+            <div class="contact-bar-info">
+                <span class="cb-label">舍得酒业</span> &middot; 共享公共事务中心总经理
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">电话</span> <a href="tel:18884606786">18884606786</a>
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">地址</span> 四川省成都市武侯区复地复城国际T1
+            </div>
+        </div>
+        <!-- ▲▲▲ 固定板块结束 ▲▲▲ -->
+    </div>
+
+    <!-- ═══ 折叠面板区域 ═══ -->
+
+    <div class="collapse-group" id="company">
+        <div class="collapse-group-title">&#9660; 企业详情（点击展开） &#9660;</div>
+
+        <!-- 企业概述（折叠） -->
+        <details class="collapse-section">
+            <summary>&#127970; 企业概述</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>成都中国青年旅行社有限公司前身为成都中国青年旅行社，成立于1988年2月，2021年12月由全民所有制改制为有限责任公司，现为成都天府旅游产业投资集团有限责任公司100%持股的国有独资企业，隶属成都文旅集团（三级子公司）。公司注册资本3000万元（实缴3000万元），法定代表人邵丹，注册地址为中国（四川）自由贸易试验区成都市高新区万象南路399号西部旅游运营中心。公司持出境旅游、入境旅游、国内旅游全牌照，业务覆盖全球100多个国家和地区，2023年营业收入4.62亿元、组织接待游客62.01万人次，2024年参保人数90人；下设分支机构398家（含5家分社、117家服务网点），分社与服务网点均为非独立法人。</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="label">企业全称</div>
+                        <div class="value">成都中国青年旅行社有限公司</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">统一社会信用代码</div>
+                        <div class="value">9151010063311995XQ</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">成立年份</div>
+                        <div class="value">1988年2月4日</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">注册资本</div>
+                        <div class="value">3,000万元（实缴3,000万元）</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">法定代表人</div>
+                        <div class="value">邵丹（执行董事、经理）</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">控股股东</div>
+                        <div class="value">成都天府旅游产业投资集团有限责任公司（100%）</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">所属集团</div>
+                        <div class="value">成都文化旅游发展集团（三级子公司）</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">2023年营业收入</div>
+                        <div class="value">4.62亿元</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">参保人数</div>
+                        <div class="value">90人（2024年）</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">注册地</div>
+                        <div class="value">成都高新区万象南路399号</div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 主营业务（折叠） -->
+        <details class="collapse-section">
+            <summary>&#9881; 主营业务</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>公司以旅行社全产业链运营为核心，同时承接城市营销、国际活动礼宾保障、公商务考察、教育研学与会展票务。近年重点产品包括熊猫主题旅游列车“熊猫专列·成都号”、成都直飞塞舌尔包机航线，以及面向入境游客的世园会/大运会礼宾接待与多语种服务。</p>
+                </div>
+                <div class="biz-grid">
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8f4fd;">&#9992;</div>
+                        <h4>入境旅游地接</h4>
+                        <p>面向境外组团社提供四川段地接，含多语种导游、酒店与景区资源、签证与支付便利化服务；是省级、市级入境激励的直接对应业务。</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8fde8;">&#127968;</div>
+                        <h4>国内旅游与省外来蓉</h4>
+                        <p>国内跟团、定制游、红色旅游与研学线路，覆盖九寨沟、峨眉山、三星堆等核心景区；对应市级“旅行社引客”补助。</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #f3e8fd;">&#128188;</div>
+                        <h4>会展与公商务考察</h4>
+                        <p>会议展览、企业会奖、公务考察、职工疗休养策划；可与会展/活动类资金及集团营销公司形成分工。</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #fde8f4;">&#128642;</div>
+                        <h4>专列与包机运营</h4>
+                        <p>运营“熊猫专列·成都号”及成都—塞舌尔包机，具备组织包机、专列产品的实操能力，是省级入境激励中“包机”权重的抓手。</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #fff3e0;">&#127891;</div>
+                        <h4>研学与教育服务</h4>
+                        <p>组织文化艺术交流、体验式拓展、研学线路；可对接“乐游蜀地”消费新场景中的研学研修游方向。</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8f0fe;">&#127760;</div>
+                        <h4>票务与目的地服务</h4>
+                        <p>机票、铁路、景区票务代理及酒店管理、景区管理等延伸服务，具备把“引客”转化为“过夜人天”的资源基础。</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 资质与荣誉（折叠） -->
+        <details class="collapse-section">
+            <summary>&#127942; 已获得的资质与荣誉</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <h3>国家级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-national">&#127942; 全国百强旅行社</span>
+                        <span class="badge badge-national">&#127942; 中国旅行社协会理事会副会长单位</span>
+                        <span class="badge badge-national">&#127942; 首批经营中国公民赴俄罗斯免签旅游业务旅行社（2023年9月）</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>省市级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-province">&#127941; 国家5A级旅行社（2020、2021年度）</span>
+                        <span class="badge badge-province">&#127941; 2024年度成都市信用评价AAA级旅行社</span>
+                        <span class="badge badge-province">&#127941; 四川省“金熊猫”奖先进集体（2022年）</span>
+                        <span class="badge badge-city">&#127941; 成都大运会保障工作先进集体（2024年）</span>
+                        <span class="badge badge-city">&#127941; 四川省旅游协会常务理事单位</span>
+                        <span class="badge badge-city">&#127941; 四川省首批旅游骨干企业、一级旅游企业</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>与资金类项目相关的门槛提示</h3>
+                    <p style="font-size:14px;">上述等级评定、称号与信用评价本身不在本清单内列示，但它们是多个资金类通道的前置门槛或资格条件，须特别注意：</p>
+                    <ul style="font-size:13.5px; margin-left:20px; line-height:1.95; color:var(--text);">
+                        <li><strong>旅游服务质量保证金足额缴纳（总社及全部分支机构）</strong>是成都市引客、入境两个补助方向的硬性申报条件；398家分支机构数量大，须先完成保证金与全国旅游监管服务平台备案核对，否则项目直接不予受理。</li>
+                        <li><strong>“蜀里安逸”消费新场景运营主体身份</strong>是序号2的前置门槛，本企业目前不具备，须在2027年Q2前经区县、市州商务部门逐级申报入库。</li>
+                        <li><strong>规（限）上在库＋主营业务收入首次破5亿元</strong>是序号7的触发条件，依赖统计联网直报口径，须与高新区统计部门确认主营收入归集口径。</li>
+                        <li><strong>小型微型企业划型结论</strong>决定序号6能否申报；本企业营收规模偏大，建议申报前取得市局书面意见，避免无效投入。</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <!-- 近三年项目申请（折叠） -->
+        <details class="collapse-section">
+            <summary>&#128203; 近三年经营与项目申报情况（2024—2026）</summary>
+            <div class="collapse-body">
+                <div class="card" style="background:#fffaf2; border-color:#e0b06f;">
+                    <p style="font-size:13.5px; color:#8b5a13; margin:0;"><strong>核对提示：</strong>公开渠道未检索到本企业在2024—2026年度成都市市级旅游业发展专项资金拟支持名单、四川省入境旅游激励公示名单中的记录（2025年度省级激励公示的15家含“四川省中国青年旅行社有限公司”，为同集团体系内另一独立法人，不是本企业）。请内部核对近三年实际获批与已申报项目清单，避免与本清单重复申报或遗漏。</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">2023年</div>
+                        <h4>接待游客62.01万人次，九寨沟方向发团量全省前列</h4>
+                        <p>入选首批经营中国公民组团赴俄罗斯免签旅游业务旅行社名单（2023年9月）。<span class="status-done">已落地</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2024年</div>
+                        <h4>成都世界园艺博览会礼宾保障、大运会接待</h4>
+                        <p>承担30个国家、70个城市共1600人次国际嘉宾接待；获评2024年度成都市信用评价AAA级旅行社。<span class="status-done">已落地</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2024—2025年</div>
+                        <h4>运营“熊猫专列·成都号”与成都直飞塞舌尔包机</h4>
+                        <p>推出海岛度假、生态科考等主题线路；召开成都入境游精品线路发布会，拓展韩国大邱等入境合作。属重大品牌化旅游产业活动与省级入境激励“包机”权重的核心素材。<span class="status-progress">可转化为申报素材</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2026年</div>
+                        <h4>行业背景：入境游高速增长</h4>
+                        <p>2026年上半年成都接待入境游客131.5万人次、同比增长33.6%；四川省级层面于2026年8月公示2025年度入境旅游激励20家、2026年8月下达省级服务业发展专项资金（含消费新场景运营激励）。<span class="status-progress">窗口已打开</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2027年（本清单目标年度）</div>
+                        <h4>目标：省级入境激励进入前20、市级三项补助全额拿满</h4>
+                        <p>Q1锁定约70万元（序号1、3、4、5）；Q2—Q4完成“蜀里安逸”新场景入库、专列/包机品牌活动落地与贷款项目谋划，为2028年度解锁另约190万元。</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 子公司与属地（折叠） -->
+        <details class="collapse-section">
+            <summary>&#127961; 关联企业、属地与申报主体划分</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <h3>可直接用于拆分申报的独立法人</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="label">成都中国青年旅行社有限公司</div>
+                            <div class="value">成都高新区 · 独立法人 · 本清单主体</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">成都文旅旅游营销管理有限公司</div>
+                            <div class="value">集团内独立法人 · 会展营销条线</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">成都麦思文化传播有限公司</div>
+                            <div class="value">独立法人 · 文化传播与广告</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">成都天府旅游产业投资集团</div>
+                            <div class="value">母公司 · 重大项目业主</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">成都导游管理服务有限公司</div>
+                            <div class="value">参股20% · 不控股，不并表申报</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">四川省中国青年旅行社有限公司</div>
+                            <div class="value">同域同业独立法人 · 与本企业非同一主体</div>
+                        </div>
+                    </div>
+                    <p style="font-size:13.5px; color:var(--text-light);">398家分支机构（分社、服务网点）为非独立法人，一律由总社汇总申报；不得以网点名义在多个区县分别申报，避免被认定为重复申报。</p>
+                </div>
+            </div>
+        </details>
+    </div>
+
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer">
+    成都中国青年旅行社有限公司 &middot; 2027年度奖补项目申报清单 &middot; 仅供内部参考使用 &middot; 编制日期：2026年10月19日
+</div>
+
+<!-- ===== JavaScript ===== -->
+<script>
+    // 1. 导航平滑滚动 + 激活态切换
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+            this.classList.add('active');
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // 2. 表格 + 卡片 层级筛选（同步桌面和移动端）
+    function filterTable(level) {
+        const tableRows = document.querySelectorAll('#projectTable tbody tr');
+        tableRows.forEach(row => {
+            row.style.display = (level === 'all' || row.dataset.level === level) ? '' : 'none';
+        });
+        const mobileCards = document.querySelectorAll('#mobileCards .m-project-card');
+        mobileCards.forEach(card => {
+            card.style.display = (level === 'all' || card.dataset.level === level) ? '' : 'none';
+        });
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+    }
+
+    // 3. 滚动监听 (Scroll Spy)
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('.section, .collapse-group');
+        const navLinks = document.querySelectorAll('.nav a');
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 140;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // 4. 折叠面板：点击“企业详情”导航自动展开所有折叠面板
+    document.querySelector('.nav a[href="#company"]').addEventListener('click', function() {
+        setTimeout(() => {
+            document.querySelectorAll('.collapse-section').forEach(d => d.open = true);
+        }, 400);
+    });
+</script>
+
+</body>
+</html>
